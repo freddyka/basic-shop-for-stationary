@@ -1,0 +1,4 @@
+# Ultra-minimal .gitignore for demo project
+
+# Docker data only
+dbdata/

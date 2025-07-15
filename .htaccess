@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^(paper|school|shipping|safety|presentation|writing-materials)/?$ shop.php?category=$1 [L]

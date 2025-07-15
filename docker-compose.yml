@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  php:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: php:8.2-apache
+    container_name: paperclip-php
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www/html
+      - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: paperclip-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: demo123
+      MYSQL_DATABASE: paperclip_db
+      MYSQL_USER: paperclip
+      MYSQL_PASSWORD: demo123
+    ports:
+      - 3310:3306
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: paperclip-phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: paperclip
+      PMA_PASSWORD: demo123
+      PMA_ARBITRARY: 1
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
