@@ -6,7 +6,7 @@ Ein E-Commerce-Projekt für Bürobedarf, entwickelt mit PHP, MySQL und Docker.
 
 ```bash
 git clone <repository-url>
-cd uni-project-online-shop
+cd 
 docker-compose up -d
 ```
 
