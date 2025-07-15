@@ -16,7 +16,7 @@ docker-compose up -d
 
 - **Website:** http://localhost:8000
 - **phpMyAdmin:** http://localhost:8081
-- **Login:** `root` / `demo123`
+- **Login:** `paperclip` / `demo123`
 
 ## ✨ Features
 
@@ -40,8 +40,8 @@ docker-compose up -d
 | Service | URL | Login | Passwort |
 |---------|-----|-------|----------|
 | Website | http://localhost:8000 | - | - |
-| phpMyAdmin | http://localhost:8081 | `root` | `demo123` |
-| MySQL | localhost:3310 | `root` | `demo123` |
+| phpMyAdmin | http://localhost:8081 | `paperclip` | `demo123` |
+| MySQL | localhost:3310 | `paperclip` | `demo123` |
 
 ## 🎯 URL-Struktur
 
